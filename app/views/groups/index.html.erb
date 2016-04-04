@@ -1,0 +1,11 @@
+<%= link_to("New Group", new_group_path, :class => "btn") %>
+<ul>
+    <% @groups.each do |group| %>
+	<li>
+	<%= link_to(group.title, group_path(group)) %>
+	<%= group.description %>
+	<%= link_to("Edit", edit_group_path(group), :class => "btn") %>
+	<%= link_to("Delete", group_path(group), :class => "btn", :method => :delete, :confirm => "Are you sure?") %>
+	</li>
+    <% end %>
+</ul>
